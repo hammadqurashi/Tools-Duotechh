@@ -1,0 +1,19 @@
+.about-container {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.about-h {
+  font-family: var(--heading-font-family);
+  color: var(--main-color);
+}
+
+.about-p {
+  font-family: var(--heading-font-family);
+  margin-top: 10px;
+}
+
+.link-in-p {
+  color: var(--main-color);
+  font-weight: 500;
+}

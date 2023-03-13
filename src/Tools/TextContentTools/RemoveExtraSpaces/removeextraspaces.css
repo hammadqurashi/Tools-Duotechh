@@ -1,0 +1,41 @@
+.remove-extra-spaces-container {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.remove-extra-spaces-box {
+  width: 70%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  appearance: none;
+  width: 100%;
+  min-height: 220px;
+  font-size: 16px;
+  font-family: var(--content-font-family);
+  padding: 10px;
+  outline: none;
+  resize: none;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-family: var(--button-font-family);
+  font-size: 16px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--main-color);
+}

@@ -1,0 +1,76 @@
+.random-palette-generator {
+  margin-bottom: 50px;
+}
+
+.palettecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.palettes_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.palette {
+  width: 17vmax;
+  height: 17vmax;
+  border-radius: 3px;
+  margin: 5px 5px;
+  cursor: pointer;
+}
+
+.copy::before {
+  content: "COPY";
+  color: white;
+  font-size: 1.7vmax;
+  font-family: var(--content-font-family);
+  position: relative;
+  background-color: rgba(196, 196, 196, 0.336);
+  padding: 5px 8px;
+  top: 40%;
+  left: 35%;
+}
+.copied::before {
+  content: "COPIED";
+  color: white;
+  font-size: 2vmax;
+  font-family: var(--content-font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.show_Palette {
+  z-index: 9999;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#Copied {
+  font-size: 7vmax;
+  color: white;
+  font-family: var(--content-font-family);
+  background-color: rgba(197, 197, 197, 0.507);
+  width: 100%;
+  text-align: center;
+}
+
+#copiedColor {
+  font-size: 4vmax;
+  color: white;
+  font-family: var(--content-font-family);
+}

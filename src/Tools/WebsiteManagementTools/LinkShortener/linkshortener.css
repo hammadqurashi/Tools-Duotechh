@@ -1,0 +1,70 @@
+.Link_Shortener_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 400px;
+}
+
+.input_link {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+#orignal_link {
+  width: 80%;
+  font-size: 20px;
+  padding: 10px;
+  border: 3px solid var(--secondary-color);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  margin-right: 15px;
+}
+
+.shorten_link_cont {
+  display: none;
+  padding: 10px;
+  width: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#shorten_link {
+  color: white;
+  font-family: var(--content-font-family);
+  width: 70%;
+  font-size: 22px;
+  outline: none;
+}
+
+.copyIcon {
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 450px) {
+  .input_link {
+    align-items: center;
+    flex-direction: column;
+  }
+  #orignal_link {
+    font-size: 15px;
+    width: 100%;
+  }
+  #generate_shorten_link {
+    margin-top: 10px;
+    width: 50%;
+  }
+  .shorten_link_cont {
+    width: 70%;
+  }
+  #shorten_link {
+    font-size: 16px;
+  }
+}

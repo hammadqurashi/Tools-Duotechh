@@ -1,0 +1,29 @@
+.home-container {
+  margin: 50px 0px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.home-tools-container {
+  width: 60%;
+}
+
+.sidebar-container {
+  width: 30%;
+}
+
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .home-tools-container {
+    width: 80%;
+    margin: auto;
+  }
+  .sidebar-container {
+    width: 80%;
+    margin: 50px auto;
+  }
+}

@@ -1,0 +1,45 @@
+.sidebar {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 5px;
+}
+
+.heading-sidebar {
+  border-radius: 5px;
+  padding: 10px;
+  font-family: var(--heading-font-family);
+  color: white;
+  font-weight: 400;
+  background-color: var(--secondary-color);
+}
+
+.trending-tools-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-tools {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  background-color: white;
+}
+
+.trending-img {
+  width: 25px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.trending-tool-name {
+  color: var(--secondary-color);
+  font-family: var(--content-font-family);
+  font-size: 17px;
+}
+
+.trending-tools:hover .trending-img {
+  scale: 1.4;
+}

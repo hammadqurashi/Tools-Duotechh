@@ -1,0 +1,31 @@
+.toolsContainer {
+  margin-bottom: 50px;
+  width: 100%;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 5px;
+}
+.IntroBox {
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+}
+
+.tools_type_heading {
+  color: white;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+}
+
+.tools_type_description {
+  color: white;
+  font-family: var(--heading-font-family);
+  font-size: 12px;
+}
+
+.toolsbox {
+  padding: 10px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

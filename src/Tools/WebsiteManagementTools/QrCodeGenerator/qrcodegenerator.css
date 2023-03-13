@@ -1,0 +1,62 @@
+.qr_code_gen_container {
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.qr_code_gen_box {
+  margin: 40px 0px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+#qr_code_link {
+  width: 80%;
+  font-size: 20px;
+  padding: 10px;
+  border: 3px solid var(--secondary-color);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  margin-right: 15px;
+}
+
+.generated_qr_code_box {
+  margin: 40px 0px;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(190, 190, 190);
+  width: 70%;
+  padding: 10px 0px;
+}
+
+#qr_code {
+  width: 150px;
+  height: 150px;
+  margin: 20px 0px;
+}
+
+#qr_code_download {
+  display: block;
+}
+
+@media (max-width: 450px) {
+  .qr_code_gen_box {
+    align-items: center;
+    flex-direction: column;
+  }
+  #qr_code_generate {
+    margin-top: 10px;
+  }
+
+  #qr_code_link {
+    font-size: 15px;
+    width: 100%;
+  }
+}

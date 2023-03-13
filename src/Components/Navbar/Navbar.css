@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navBar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  height: 80px;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0px 0px 5px var(--main-color);
+}
+
+.navSiteTitle {
+  font-family: var(--nav-font-family);
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+}
+
+.navbar-ul {
+  float: right;
+  margin-right: 20px;
+}
+
+.navbar-ul li {
+  display: inline-block;
+  line-height: 78px;
+  margin: 0px 5px;
+}
+
+.nav-link {
+  font-family: var(--nav-font-family);
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.nav-link:hover {
+  color: var(--main-color);
+}
+
+.mobile-nav-icon {
+  display: none;
+  float: right;
+  font-size: 30px;
+  color: var(--main-color);
+  line-height: 80px;
+  margin-right: 40px;
+}
+
+.themeToggleBtn {
+  background: transparent;
+  font-size: 20px;
+  width: 50px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fa-sun {
+  color: rgb(255, 189, 67);
+}
+
+.fa-moon {
+  color: rgb(255, 189, 67);
+}
+
+.fa-bars {
+  color: var(--main-color);
+  font-size: 20px;
+}
+
+.fa-xmark {
+  color: var(--main-color);
+  font-size: 20px;
+}
+
+.active {
+  border-bottom: 2px solid var(--main-color);
+}
+
+@media (max-width: 952px) {
+  .navSiteTitle {
+    font-size: 30px;
+    padding: 0 50px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .mobile-nav-icon {
+    display: block;
+  }
+
+  .navbar-ul {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-color);
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  .navbar-ul li {
+    display: block;
+  }
+  .nav-link {
+    color: white;
+    font-size: 20px;
+  }
+  .nav-link:hover {
+    color: white;
+  }
+  .active {
+    color: white;
+    border-bottom: 2px solid white;
+  }
+}
+
+@media (max-width: 384px) {
+  .navSiteTitle {
+    font-size: 25px;
+    padding: 0 30px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+}
+@media (max-width: 280px) {
+  .navSiteTitle {
+    font-size: 20px;
+    padding: 0 30px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+}
