@@ -13,6 +13,7 @@ import QrCodeReader from "./Tools/WebsiteManagementTools/QrCodeReader/QrCodeRead
 import WordCounter from "./Tools/TextContentTools/WordCounter/WordCounter";
 import CaseConverter from "./Tools/TextContentTools/CaseConverter/CaseConverter";
 import RemoveExtraSpaces from "./Tools/TextContentTools/RemoveExtraSpaces/RemoveExtraSpaces";
+import MultiTextGenerator from "./Tools/TextContentTools/MultiTextGenerator/MultiTextGenerator";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -48,6 +49,11 @@ function App() {
               exact
               path="/remove-extra-spaces"
               element={<RemoveExtraSpaces />}
+            />
+            <Route
+              exact
+              path="/multi-text-generator"
+              element={<MultiTextGenerator />}
             />
           </Routes>
         </div>

@@ -151,7 +151,7 @@ const ToolsContainer = (props) => {
     {
       toolShowCaseName: "Multi Text Generator",
       toolShowCaseImg: images["multi-text-generator.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/multi-text-generator",
       category: "Text Content Tools",
     },
   ];
