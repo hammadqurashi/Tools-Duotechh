@@ -115,7 +115,7 @@ const ToolsContainer = (props) => {
     {
       toolShowCaseName: "RGB to HEX",
       toolShowCaseImg: images["rgb-to-hex.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/rgb-to-hex",
       category: "Website Management Tools",
     },
     {

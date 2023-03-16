@@ -15,6 +15,7 @@ import CaseConverter from "./Tools/TextContentTools/CaseConverter/CaseConverter"
 import RemoveExtraSpaces from "./Tools/TextContentTools/RemoveExtraSpaces/RemoveExtraSpaces";
 import MultiTextGenerator from "./Tools/TextContentTools/MultiTextGenerator/MultiTextGenerator";
 import PickColorFromImage from "./Tools/OnlineImagesTools/PickColorFromImage/PickColorFromImage";
+import RgbToHex from "./Tools/WebsiteManagementTools/RgbToHex/RgbToHex";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -61,6 +62,7 @@ function App() {
               path="/pick-color-from-image"
               element={<PickColorFromImage />}
             />
+            <Route exact path="/rgb-to-hex" element={<RgbToHex />} />
           </Routes>
         </div>
         <Footer />
