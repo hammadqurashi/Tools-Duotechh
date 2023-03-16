@@ -27,8 +27,10 @@ footer {
 }
 
 .footer-h1 {
+  text-align: center;
   font-family: var(--footer-font-family);
   color: white;
+  font-size: 20px;
 }
 
 .footer-p {
@@ -56,9 +58,30 @@ footer {
   font-size: 10px;
 }
 
-.company-name {
+.footer-company-name {
   font-family: var(--footer-font-family);
   color: var(--main-color);
   font-weight: 500;
   font-size: 12px;
+}
+
+@media (max-width: 350px) {
+  .footer-p {
+    font-family: var(--footer-font-family);
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .footer-copyright {
+    font-family: var(--footer-font-family);
+    color: rgb(211, 211, 211);
+    font-size: 8px;
+  }
+  .footer-company-name {
+    font-family: var(--footer-font-family);
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: 9px;
+  }
 }

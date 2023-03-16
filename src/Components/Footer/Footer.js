@@ -18,7 +18,7 @@ const Footer = () => {
           <span className="footer-copyright">
             Copyright &#169; {year}
             {"  "}-{"  "}
-            <span className="company-name">DuoTechh</span>
+            <span className="footer-company-name">DuoTechh</span>
           </span>
         </div>
       </div>

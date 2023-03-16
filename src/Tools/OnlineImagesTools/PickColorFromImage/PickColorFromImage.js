@@ -4,25 +4,20 @@ const PickColorFromImage = () => {
   const [img, setimg] = useState(
     require("../../../Assets/OtherImages/upload.webp")
   );
-  // const [color2, setcolor2] = useState("#FFFFFF");
-  // const [color3, setcolor3] = useState("#FFFFFF");
   const upload = useRef(null);
   const imgRef = useRef(null);
 
-  const acolor = [];
+  const initialPickedColor = [];
 
-  const [color, setcolor] = useState(acolor);
+  const [color, setcolor] = useState(initialPickedColor);
 
   const eyeDropper = new EyeDropper(); // eslint-disable-line
   const pickColor = () => {
     eyeDropper
       .open()
       .then(async (value) => {
-        console.log(value);
-        // sRGBHex
         let Array = [value.sRGBHex];
         setcolor(color.concat(Array));
-        console.log(color);
       })
       .catch((err) => {
         console.log(err);
@@ -43,13 +38,25 @@ const PickColorFromImage = () => {
     <div className="pcfi-container">
       <h1 className="tool_h1">Pick Color From Image</h1>
       <div className="pcfi-box">
-        <div className="pcfi-img-box">
+        <div
+          className="pcfi-img-box"
+          style={{
+            width:
+              img === require("../../../Assets/OtherImages/upload.webp")
+                ? "200px"
+                : "100%",
+            maxHeight:
+              img === require("../../../Assets/OtherImages/upload.webp")
+                ? "200px"
+                : "300px",
+          }}
+        >
           <img
             className="pcfi-img"
             ref={imgRef}
-            style={{
-              backgroundColor: "black",
-            }}
+            // style={{
+            //   backgroundColor: "black",
+            // }}
             src={img}
             alt="uploadedimage"
             onClick={() => {
@@ -78,10 +85,14 @@ const PickColorFromImage = () => {
             Upload Image
           </button>
           <button
-            onClick={() => {
-              return img !== require("../../../Assets/OtherImages/upload.webp")
-                ? alert("Upload Image")
-                : pickColor();
+            onClick={pickColor}
+            style={{
+              pointerEvents:
+                img === require("../../../Assets/OtherImages/upload.webp") &&
+                "none",
+              opacity:
+                img === require("../../../Assets/OtherImages/upload.webp") &&
+                "0.7",
             }}
             className="pcfi-pickcolor-btn my-10"
           >

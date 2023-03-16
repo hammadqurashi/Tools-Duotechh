@@ -14,10 +14,9 @@
 
 .pcfi-img-box {
   background: transparent;
-  width: 100%;
-  max-height: 60vh;
   overflow-y: scroll;
-  margin: 20px 0px;
+  margin: 20px auto;
+  cursor: pointer;
 }
 
 .pcfi-img {
@@ -38,6 +37,7 @@
 
 .pcfi-pickedcolors-cont {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   margin: 20px 0px;
@@ -48,6 +48,7 @@
   font-size: 23px;
 }
 .pcfi-pickedcolors-note {
+  margin-left: 5px;
   font-family: var(--content-font-family);
   font-size: 17px;
 }
@@ -57,7 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 10px;
+  margin: 10px;
   font-family: var(--content-font-family);
   border-radius: 5px;
   cursor: pointer;
@@ -67,6 +68,6 @@
     flex-direction: column;
   }
   .pcfi-pickedcolors {
-    margin: 5px 0px;
+    font-size: 13px;
   }
 }
