@@ -11,7 +11,7 @@ const WordCounter = () => {
     <div className="wordCounterContainer">
       <h1 className="tool_h1">Word And Character Counter</h1>
       <div className="wordCounterBox">
-        <div className="showCounts-top">
+        <div className="wordCounter-showCounts-top">
           {
             text
               .replace(/\./g, "")
@@ -23,11 +23,11 @@ const WordCounter = () => {
           Word and {text.length} Character
         </div>
         <textarea
-          className="text"
+          className="wordCounter-text"
           placeholder="Enter The Text"
           onChange={changeHandler}
         ></textarea>
-        <div className="showCounts-bottom">
+        <div className="wordCounter-showCounts-bottom">
           {
             text
               .replace(/\./g, "")

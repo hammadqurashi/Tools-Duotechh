@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-#qr_code_link {
+#qr_code_gen_link {
   width: 80%;
   font-size: 20px;
   padding: 10px;
@@ -55,7 +55,7 @@
     margin-top: 10px;
   }
 
-  #qr_code_link {
+  #qr_code_gen_link {
     font-size: 15px;
     width: 100%;
   }

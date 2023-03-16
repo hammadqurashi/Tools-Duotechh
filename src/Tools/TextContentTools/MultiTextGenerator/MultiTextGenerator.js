@@ -35,8 +35,7 @@ const MultiTextGenerator = () => {
       <h1 className="tool_h1">Multi Text Generator</h1>
       <div className="m_t_g_box">
         <textarea
-          id="input_text"
-          className="text_area"
+          className="m_t_g_text_area"
           cols="30"
           rows="5"
           value={text}
@@ -65,8 +64,7 @@ const MultiTextGenerator = () => {
           value={generatedText}
           readOnly
           placeholder="Generated Text Will Appear Here!"
-          id="generated_text"
-          className="text_area"
+          className="m_t_g_text_area"
           cols="30"
           rows="10"
         ></textarea>

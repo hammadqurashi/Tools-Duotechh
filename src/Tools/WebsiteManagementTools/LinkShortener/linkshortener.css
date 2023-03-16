@@ -6,13 +6,13 @@
   min-height: 400px;
 }
 
-.input_link {
+.link_shortener_input_link {
   width: 70%;
   display: flex;
   justify-content: center;
 }
 
-#orignal_link {
+#link_shortener_orignal_link {
   width: 80%;
   font-size: 20px;
   padding: 10px;
@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-#shorten_link {
+#link_shortener_shorten_link {
   color: white;
   font-family: var(--content-font-family);
   width: 70%;
@@ -43,28 +43,28 @@
   outline: none;
 }
 
-.copyIcon {
+.link_shortener_copyIcon {
   color: white;
   font-size: 20px;
 }
 
 @media (max-width: 450px) {
-  .input_link {
+  .Link_Shortener_input_link {
     align-items: center;
     flex-direction: column;
   }
-  #orignal_link {
+  #link_shortener_orignal_link {
     font-size: 15px;
     width: 100%;
   }
-  #generate_shorten_link {
+  #link_shortener_generate_link {
     margin-top: 10px;
     width: 50%;
   }
   .shorten_link_cont {
     width: 70%;
   }
-  #shorten_link {
+  #link_shortener_shorten_link {
     font-size: 16px;
   }
 }

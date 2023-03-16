@@ -29,19 +29,19 @@ const CaseConverter = () => {
       <h1 className="tool_h1">Word And Character Counter</h1>
       <div className="caseConverterBox">
         <textarea
-          className="text"
+          className="caseConvertertext"
           placeholder="Enter The Text"
           value={text}
           onChange={handleChange}
         ></textarea>
-        <div className="convertBtns">
-          <button className="btn" onClick={UpperCase}>
+        <div className="caseConverterBtns">
+          <button className="caseConverterbtn" onClick={UpperCase}>
             Convert To UpperCase
           </button>
-          <button className="btn" onClick={LowerCase}>
+          <button className="caseConverterbtn" onClick={LowerCase}>
             Convert To LowerCase
           </button>
-          <button className="btn" onClick={Capitalize}>
+          <button className="caseConverterbtn" onClick={Capitalize}>
             Sentence First Letter Capitalize
           </button>
         </div>

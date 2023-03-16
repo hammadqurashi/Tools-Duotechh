@@ -14,6 +14,7 @@ import WordCounter from "./Tools/TextContentTools/WordCounter/WordCounter";
 import CaseConverter from "./Tools/TextContentTools/CaseConverter/CaseConverter";
 import RemoveExtraSpaces from "./Tools/TextContentTools/RemoveExtraSpaces/RemoveExtraSpaces";
 import MultiTextGenerator from "./Tools/TextContentTools/MultiTextGenerator/MultiTextGenerator";
+import PickColorFromImage from "./Tools/OnlineImagesTools/PickColorFromImage/PickColorFromImage";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -54,6 +55,11 @@ function App() {
               exact
               path="/multi-text-generator"
               element={<MultiTextGenerator />}
+            />
+            <Route
+              exact
+              path="/pick-color-from-image"
+              element={<PickColorFromImage />}
             />
           </Routes>
         </div>

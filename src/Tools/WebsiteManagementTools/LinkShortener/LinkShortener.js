@@ -41,16 +41,16 @@ const LinkShortener = () => {
   return (
     <div className="Link_Shortener_box">
       <h1 className="tool_h1">Link Shortener</h1>
-      <div className="input_link">
+      <div className="link_shortener_input_link">
         <input
           type="text"
-          id="orignal_link"
+          id="link_shortener_orignal_link"
           placeholder="Enter a Link"
           onChange={handleChange}
         />
         <button
           className="btn-primary"
-          id="generate_shorten_link"
+          id="link_shortener_generate_link"
           onClick={generateLink}
         >
           {generateText}
@@ -61,11 +61,11 @@ const LinkShortener = () => {
         title="Click To Copy"
         onClick={handleCopy}
       >
-        <span type="text" id="shorten_link">
+        <span type="text" id="link_shortener_shorten_link">
           {url}
         </span>
         <i
-          className={`copyIcon fa-${
+          className={`link_shortener_copyIcon fa-${
             copyText === "clipboard" ? "regular" : "solid"
           } fa-${copyText}`}
           onClick={handleCopy}

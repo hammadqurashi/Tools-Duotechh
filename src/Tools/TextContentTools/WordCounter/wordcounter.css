@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.showCounts-top {
+.wordCounter-showCounts-top {
   height: 50px;
   font-size: 24px;
   background-color: var(--secondary-color);
@@ -26,7 +26,7 @@
   color: white;
 }
 
-.text {
+.wordCounter-text {
   appearance: none;
   width: 100%;
   min-height: 210px;
@@ -37,7 +37,7 @@
   resize: none;
 }
 
-.showCounts-bottom {
+.wordCounter-showCounts-bottom {
   height: 40px;
   background-color: var(--secondary-color);
   width: 100%;

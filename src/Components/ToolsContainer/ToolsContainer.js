@@ -17,6 +17,12 @@ const ToolsContainer = (props) => {
 
   const toolsInShowcase = [
     {
+      toolShowCaseName: "Pick Color From Image",
+      toolShowCaseImg: images["color-picker.webp"],
+      toolShowCaseLink: "/pick-color-from-image",
+      category: "Online Images Tools",
+    },
+    {
       toolShowCaseName: "Image Format Changer",
       toolShowCaseImg: images["image-format-changer.webp"],
       toolShowCaseLink: "/about",

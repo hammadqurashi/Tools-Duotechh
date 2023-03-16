@@ -15,12 +15,12 @@ const RemoveExtraSpaces = () => {
       <h1 className="tool_h1">Word And Character Counter</h1>
       <div className="remove-extra-spaces-box">
         <textarea
-          className="text"
+          className="res_text"
           placeholder="Enter The Text"
           value={text}
           onChange={handleChange}
         ></textarea>
-        <button className="btn" onClick={removeExtraSpaces}>
+        <button className="res_text_btn" onClick={removeExtraSpaces}>
           Remove Extra Spaces
         </button>
       </div>

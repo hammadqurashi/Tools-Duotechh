@@ -9,7 +9,10 @@ const QrCodeGenerator = () => {
   const handleChange = (e) => {
     setUrl(e.target.value);
   };
-
+  async function toDataURL(url) {
+    const blob = await fetch(url).then((res) => res.blob());
+    return URL.createObjectURL(blob);
+  }
   const qrCodeGenerate = () => {
     setgenerateText("GENERATING");
     let generated_qr_code_box = document.querySelector(
@@ -17,30 +20,22 @@ const QrCodeGenerator = () => {
     );
     fetch(
       `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${url}`
-    ).then((value) => {
+    ).then(async (value) => {
       setgenerateText("GENERATE");
       setqrCode(value.url);
-      console.log(value);
       generated_qr_code_box.style.display = "flex";
+      let href = await toDataURL(value.url);
+      setqrCodeDownload(href);
     });
   };
-  async function toDataURL(url) {
-    const blob = await fetch(url).then((res) => res.blob());
-    return URL.createObjectURL(blob);
-  }
-  const downloadFunction = () => {
-    let href = toDataURL(
-      `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${url}`
-    );
-    setqrCodeDownload(href);
-  };
+
   return (
     <div className="qr_code_gen_container">
       <h1 className="tool_h1">FREE QR CODE GENERATOR</h1>
       <div className="qr_code_gen_box">
         <input
           type="text"
-          id="qr_code_link"
+          id="qr_code_gen_link"
           placeholder="Enter the Link"
           onChange={handleChange}
         />
@@ -55,9 +50,7 @@ const QrCodeGenerator = () => {
       <div className="generated_qr_code_box">
         <img src={qrCode} alt="qr_code" id="qr_code" />
         <a href={qrCodeDownload} id="qr_code_download" download="qr_code">
-          <button className="btn-primary" onClick={downloadFunction}>
-            Download
-          </button>
+          <button className="btn-primary">Download</button>
         </a>
       </div>
     </div>
