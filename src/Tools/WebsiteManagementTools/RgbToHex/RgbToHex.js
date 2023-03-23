@@ -1,11 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./rgbtohex.css";
 const RgbToHex = () => {
   const [hexcolor, sethexcolor] = useState("");
-
-  const red = useRef();
-  const green = useRef();
-  const blue = useRef();
+  const [rgb, setrgb] = useState({ red: "", green: "", blue: "" });
 
   const valuetoHex = (value) => {
     let hex = value.toString(16);
@@ -17,19 +14,29 @@ const RgbToHex = () => {
   };
 
   const convertToHex = async () => {
-    let r = Number.parseInt(red.current.value);
-    let g = Number.parseInt(green.current.value);
-    let b = Number.parseInt(blue.current.value);
+    let r = Number.parseInt(rgb.red);
+    let g = Number.parseInt(rgb.green);
+    let b = Number.parseInt(rgb.blue);
     let newhexColor = "#" + rgbToHexa(r, g, b);
     sethexcolor(newhexColor);
   };
 
   const copyColor = (e) => {
-    navigator.clipboard.writeText(hexcolor);
-    e.target.src = require("../../../Assets/OtherImages/tick.webp");
-    setTimeout(() => {
-      e.target.src = require("../../../Assets/OtherImages/copy.webp");
-    }, 1000);
+    if (!hexcolor) {
+      return;
+    } else {
+      navigator.clipboard.writeText(hexcolor);
+      e.target.src = require("../../../Assets/OtherImages/tick.webp");
+      setTimeout(() => {
+        e.target.src = require("../../../Assets/OtherImages/copy.webp");
+      }, 1000);
+    }
+  };
+
+  const handleChange = (e) => {
+    if (e.target.value <= 255 && e.target.value >= 0) {
+      setrgb({ ...rgb, [e.target.id]: e.target.value });
+    }
   };
 
   return (
@@ -42,8 +49,8 @@ const RgbToHex = () => {
               Red Color (R)
             </label>
             <input
-              // onChange={handleChange}
-              ref={red}
+              onChange={handleChange}
+              value={rgb.red}
               type="number"
               id="red"
               className="rgbtohex-inputs"
@@ -56,9 +63,9 @@ const RgbToHex = () => {
               Green Color (G)
             </label>
             <input
-              // onChange={handleChange}
+              onChange={handleChange}
+              value={rgb.green}
               type="number"
-              ref={green}
               id="green"
               className="rgbtohex-inputs"
               min={0}
@@ -70,9 +77,9 @@ const RgbToHex = () => {
               Blue Color (B)
             </label>
             <input
-              // onChange={handleChange}
+              onChange={handleChange}
+              value={rgb.blue}
               type="number"
-              ref={blue}
               id="blue"
               className="rgbtohex-inputs"
               min={0}
