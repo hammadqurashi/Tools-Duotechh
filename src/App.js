@@ -16,6 +16,7 @@ import RemoveExtraSpaces from "./Tools/TextContentTools/RemoveExtraSpaces/Remove
 import MultiTextGenerator from "./Tools/TextContentTools/MultiTextGenerator/MultiTextGenerator";
 import PickColorFromImage from "./Tools/OnlineImagesTools/PickColorFromImage/PickColorFromImage";
 import RgbToHex from "./Tools/WebsiteManagementTools/RgbToHex/RgbToHex";
+import ImageFormatChanger from "./Tools/OnlineImagesTools/ImageFormatChanger/ImageFormatChanger";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -63,6 +64,11 @@ function App() {
               element={<PickColorFromImage />}
             />
             <Route exact path="/rgb-to-hex" element={<RgbToHex />} />
+            <Route
+              exact
+              path="/image-format-changer"
+              element={<ImageFormatChanger />}
+            />
           </Routes>
         </div>
         <Footer />

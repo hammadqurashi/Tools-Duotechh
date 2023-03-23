@@ -25,7 +25,7 @@ const ToolsContainer = (props) => {
     {
       toolShowCaseName: "Image Format Changer",
       toolShowCaseImg: images["image-format-changer.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/image-format-changer",
       category: "Online Images Tools",
     },
     {
