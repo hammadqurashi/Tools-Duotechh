@@ -1,0 +1,180 @@
+.imageFormatChange_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 350px;
+}
+
+.imageFormatChange_Box {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ifc-addFiles {
+  width: 20vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  font-size: 1.5vmax;
+  font-family: var(--button-font-family);
+  color: white;
+  border-radius: 3px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+#ifc-addFiles:hover {
+  scale: 1.1;
+}
+
+#ifc-addFiles_img {
+  width: 100px;
+}
+
+.ifc-convertImg {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+.ifc-fileName {
+  font-size: 1.3vmax;
+  font-family: var(--content-font-family);
+  width: calc(100% / 4);
+  text-align: start;
+}
+
+#ifc-l_fileType {
+  font-size: 1.3vmax;
+  font-family: var(--content-font-family);
+  border-radius: 3px;
+  width: calc(100% / 4);
+  text-align: start;
+}
+
+#ifc-fileType {
+  font-size: 1.3vmax;
+  font-family: var(--content-font-family);
+  background-color: white;
+  padding: 5px 7px;
+  margin: 0px 2px;
+  border: 1px solid rgb(61, 61, 61);
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#fileType option {
+  background-color: white;
+  cursor: pointer;
+}
+
+.ifc-delete {
+  cursor: pointer;
+  color: red;
+  font-family: var(--button-font-family);
+  font-size: 1.7vmax;
+  width: calc(100% / 4);
+  text-align: end;
+  transition: all 0.3s ease;
+}
+
+.uploadImg {
+  width: 80%;
+  display: none;
+  justify-content: space-between;
+}
+
+#ifc-convert {
+  border: none;
+  outline: none;
+  font-size: 1.5vmax;
+  font-family: var(--button-font-family);
+  color: white;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  cursor: pointer;
+  padding: 5px 10px;
+  /* width: calc(100% / 4); */
+  text-align: center;
+}
+#file {
+  display: none;
+}
+
+#inputFile {
+  border: none;
+  outline: none;
+  font-size: 1.6vmax;
+  font-family: var(--button-font-family);
+  color: white;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.ifc-showConvertImg {
+  z-index: 99;
+  width: 60vw;
+  height: 450px;
+  position: absolute;
+  top: 100px;
+  display: none;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  background-color: white;
+  border: 2px solid var(--secondary-color);
+}
+
+.ifc-convertedImgBox {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#ifc-previewconvertedImg {
+  width: 100%;
+}
+
+.ifc-buttons {
+  margin: auto;
+}
+
+#ifc-close {
+  border: none;
+  outline: none;
+  font-size: 1.5vmax;
+  font-family: var(--button-font-family);
+  color: white;
+  border-radius: 3px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0px 5px;
+}
+
+#ifc-download {
+  border: none;
+  outline: none;
+  font-size: 1.5vmax;
+  font-family: var(--button-font-family);
+  color: white;
+  border-radius: 3px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0px 5px;
+}
