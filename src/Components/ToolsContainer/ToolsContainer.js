@@ -43,37 +43,37 @@ const ToolsContainer = (props) => {
     {
       toolShowCaseName: "PNG To JPEG Converter",
       toolShowCaseImg: images["png-to-jpeg.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/png-to-jpeg-converter",
       category: "Online Images Tools",
     },
     {
       toolShowCaseName: "Webp To JPEG Converter",
       toolShowCaseImg: images["webp-to-jpeg.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/webp-to-jpeg-converter",
       category: "Online Images Tools",
     },
     {
       toolShowCaseName: "JPEG To Webp Converter",
       toolShowCaseImg: images["jpeg-to-webp.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/jpeg-to-webp-converter",
       category: "Online Images Tools",
     },
     {
       toolShowCaseName: "PNG To Webp Converter",
       toolShowCaseImg: images["png-to-webp.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/png-to-webp-converter",
       category: "Online Images Tools",
     },
     {
       toolShowCaseName: "Webp To PNG Converter",
       toolShowCaseImg: images["webp-to-png.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/webp-to-png-converter",
       category: "Online Images Tools",
     },
     {
       toolShowCaseName: "JPEG To PNG Converter",
       toolShowCaseImg: images["jpeg-to-png.webp"],
-      toolShowCaseLink: "/about",
+      toolShowCaseLink: "/jpeg-to-png-converter",
       category: "Online Images Tools",
     },
     {

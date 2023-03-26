@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./imageformatchanger.css";
+import "./index.css";
 
 const ImageFormatChanger = () => {
   const uploadRef = useRef(null);
@@ -74,17 +74,17 @@ const ImageFormatChanger = () => {
   };
 
   return (
-    <div className="imageFormatChange_Container">
-      <h1 className="tool_h1">Image Format Changer</h1>
-      <div className="imageFormatChange_Box">
+    <div className="otherFormatChangers_Container">
+      <h1 className="tool_h1">JPEG TO WEBP CONVERTER</h1>
+      <div className="otherFormatChanger_Box">
         {convertImg.map((item) => {
           return (
-            <div className="ifc-convertImg" key={item.key}>
-              <span className="ifc-fileName">{item.name}</span>
-              <label htmlFor="ifc-fileType" id="ifc-l_fileType">
+            <div className="ofc-convertImg" key={item.key}>
+              <span className="ofc-fileName">{item.name}</span>
+              <label htmlFor="ofc-fileType" id="ofc-l_fileType">
                 Convert To
                 <select
-                  id="ifc-fileType"
+                  id="ofc-fileType"
                   onChange={(e) => handleChange(e, item.key)}
                 >
                   <option defaultValue="..." hidden>
@@ -95,12 +95,12 @@ const ImageFormatChanger = () => {
                   <option value="WEBP">WEBP</option>
                 </select>
               </label>
-              <button id="ifc-convert" onClick={() => convert(item.key)}>
+              <button id="ofc-convert" onClick={() => convert(item.key)}>
                 {convertTitle}
               </button>
               <span
                 title="Delete"
-                className="ifc-delete"
+                className="ofc-delete"
                 onClick={() => deleteBox(item.key)}
               >
                 X
@@ -108,26 +108,26 @@ const ImageFormatChanger = () => {
             </div>
           );
         })}
-        <div className="ifc-showConvertImg" ref={previewImgBox}>
-          <div className="ifc-convertedImgBox">
-            <img id="ifc-previewconvertedImg" src={imgSrc} alt="" />
+        <div className="ofc-showConvertImg" ref={previewImgBox}>
+          <div className="ofc-convertedImgBox">
+            <img id="ofc-previewconvertedImg" src={imgSrc} alt="" />
           </div>
-          <div className="ifc-buttons">
+          <div className="ofc-buttons">
             <button
-              id="ifc-close"
+              id="ofc-close"
               onClick={() => (previewImgBox.current.style.display = "none")}
             >
               Close
             </button>
-            <a href={downloadSrc} download={downloadName} id="ifc-download">
+            <a href={downloadSrc} download={downloadName} id="ofc-download">
               Download
             </a>
           </div>
         </div>
-        <button id="ifc-addFiles" onClick={() => uploadRef.current.click()}>
+        <button id="ofc-addFiles" onClick={() => uploadRef.current.click()}>
           <img
             style={{ display: convertImg.length > 0 ? "none" : "block" }}
-            id="ifc-addFiles_img"
+            id="ofc-addFiles_img"
             src={require("../../../Assets/OtherImages/upload.webp")}
             alt="Upload"
           />
@@ -135,7 +135,7 @@ const ImageFormatChanger = () => {
         </button>
         <input
           type="file"
-          id="ifc-file"
+          id="ofc-file"
           ref={uploadRef}
           onChange={addFile}
           accept="image/*"

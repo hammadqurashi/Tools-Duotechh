@@ -1,4 +1,4 @@
-.imageFormatChange_Container {
+.otherFormatChangers_Container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -6,7 +6,7 @@
   min-height: 350px;
 }
 
-.imageFormatChange_Box {
+.otherFormatChanger_Box {
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-#ifc-addFiles {
+#ofc-addFiles {
   width: 20vmax;
   display: flex;
   flex-direction: column;
@@ -32,15 +32,15 @@
   transition: all 0.3s ease;
 }
 
-#ifc-addFiles:hover {
+#ofc-addFiles:hover {
   scale: 1.1;
 }
 
-#ifc-addFiles_img {
+#ofc-addFiles_img {
   width: 100px;
 }
 
-.ifc-convertImg {
+.ofc-convertImg {
   width: 80%;
   display: flex;
   align-items: center;
@@ -48,14 +48,14 @@
   margin: 15px 0px;
 }
 
-.ifc-fileName {
+.ofc-fileName {
   font-size: 1.3vmax;
   font-family: var(--content-font-family);
   width: calc(100% / 4);
   text-align: start;
 }
 
-#ifc-l_fileType {
+#ofc-l_fileType {
   font-size: 1.3vmax;
   font-family: var(--content-font-family);
   border-radius: 3px;
@@ -63,7 +63,7 @@
   text-align: start;
 }
 
-#ifc-fileType {
+#ofc-fileType {
   font-size: 1.3vmax;
   font-family: var(--content-font-family);
   background-color: white;
@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 
-.ifc-delete {
+.ofc-delete {
   cursor: pointer;
   color: red;
   font-family: var(--button-font-family);
@@ -90,7 +90,7 @@
   transition: all 0.3s ease;
 }
 
-#ifc-convert {
+#ofc-convert {
   border: none;
   outline: none;
   font-size: 1.5vmax;
@@ -103,11 +103,11 @@
   /* width: calc(100% / 4); */
   text-align: center;
 }
-#ifc-file {
+#ofc-file {
   display: none;
 }
 
-.ifc-showConvertImg {
+.ofc-showConvertImg {
   z-index: 99;
   width: 60vw;
   max-height: 450px;
@@ -120,21 +120,21 @@
   border: 2px solid var(--secondary-color);
 }
 
-.ifc-convertedImgBox {
+.ofc-convertedImgBox {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-#ifc-previewconvertedImg {
+#ofc-previewconvertedImg {
   width: 100%;
 }
 
-.ifc-buttons {
+.ofc-buttons {
   margin: 10px 0px;
 }
 
-#ifc-close {
+#ofc-close {
   border: none;
   outline: none;
   font-size: 1.5vmax;
@@ -147,7 +147,7 @@
   margin: 0px 5px;
 }
 
-#ifc-download {
+#ofc-download {
   border: none;
   outline: none;
   font-size: 1.5vmax;
@@ -161,10 +161,10 @@
 }
 
 @media (max-width: 800px) {
-  .ifc-convertImg {
+  .ofc-convertImg {
     width: 90vw;
   }
-  .ifc-showConvertImg {
+  .ofc-showConvertImg {
     width: 80vw;
     top: 30%;
   }

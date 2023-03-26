@@ -17,6 +17,12 @@ import MultiTextGenerator from "./Tools/TextContentTools/MultiTextGenerator/Mult
 import PickColorFromImage from "./Tools/OnlineImagesTools/PickColorFromImage/PickColorFromImage";
 import RgbToHex from "./Tools/WebsiteManagementTools/RgbToHex/RgbToHex";
 import ImageFormatChanger from "./Tools/OnlineImagesTools/ImageFormatChanger/ImageFormatChanger";
+import PngToJpegConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/PngToJpegConverter";
+import WebpToJpegConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/WebpToJpegConverter";
+import JpegToWebpConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/JpegToWebpConverter";
+import PngToWebpConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/PngToWebpConverter";
+import WebpToPngConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/WebpToPngConverter";
+import JpegToPngConverter from "./Tools/OnlineImagesTools/OtherFormatChangers/JpegToPngConverter";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -68,6 +74,36 @@ function App() {
               exact
               path="/image-format-changer"
               element={<ImageFormatChanger />}
+            />
+            <Route
+              exact
+              path="/png-to-jpeg-converter"
+              element={<PngToJpegConverter />}
+            />
+            <Route
+              exact
+              path="/webp-to-jpeg-converter"
+              element={<WebpToJpegConverter />}
+            />
+            <Route
+              exact
+              path="/jpeg-to-webp-converter"
+              element={<JpegToWebpConverter />}
+            />
+            <Route
+              exact
+              path="/png-to-webp-converter"
+              element={<PngToWebpConverter />}
+            />
+            <Route
+              exact
+              path="/webp-to-png-converter"
+              element={<WebpToPngConverter />}
+            />
+            <Route
+              exact
+              path="/jpeg-to-png-converter"
+              element={<JpegToPngConverter />}
             />
           </Routes>
         </div>
