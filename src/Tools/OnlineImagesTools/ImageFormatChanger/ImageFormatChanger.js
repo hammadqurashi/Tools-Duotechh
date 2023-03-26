@@ -4,13 +4,13 @@ import "./imageformatchanger.css";
 const ImageFormatChanger = () => {
   const uploadRef = useRef(null);
   const previewImgBox = useRef(null);
-  const previewImg = useRef(null);
-  const fileType = useRef(React.createRef());
 
   const convertedImgs = [];
   const [convertImg, setConvertImg] = useState(convertedImgs);
   const [imgSrc, setimgSrc] = useState("");
   const [downloadSrc, setdownloadSrc] = useState("");
+  const [downloadName, setdownloadName] = useState("");
+  const [convertTitle, setconvertTitle] = useState("Convert");
 
   const addFile = async () => {
     let [file] = await uploadRef.current.files;
@@ -18,11 +18,11 @@ const ImageFormatChanger = () => {
       return;
     } else {
       let src = URL.createObjectURL(file);
-      // setimgSrc(src);
       let convertImgBox = {
         name: file.name,
         type: file.type,
         key: src,
+        imageFormat: "",
       };
       setConvertImg(convertImg.concat(convertImgBox));
     }
@@ -33,20 +33,27 @@ const ImageFormatChanger = () => {
   let formatChange;
 
   const convert = (key) => {
+    setconvertTitle("Converting...");
     setimgSrc(key);
     previewImgBox.current.style.display = "flex";
+    setconvertTitle("Convert");
     let image = new Image();
     image.src = key;
-
     image.onload = async () => {
       canvas.width = image.width;
       canvas.height = image.height;
       ctx.drawImage(image, 0, 0);
-      formatChange = await canvas.toDataURL(
-        `image/${fileType.current[key].current.value.toLowerCase()}`,
-        1
-      );
-      setdownloadSrc(formatChange);
+      for (let index = 0; index < convertImg.length; index++) {
+        const element = convertImg[index];
+        if (element.key === key) {
+          formatChange = await canvas.toDataURL(
+            `image/${element.imageFormat.toLowerCase()}`,
+            0.7
+          );
+          setdownloadSrc(formatChange);
+          setdownloadName(element.name.split(".")[0]);
+        }
+      }
     };
   };
 
@@ -57,8 +64,16 @@ const ImageFormatChanger = () => {
     setConvertImg(newConversions);
   };
 
+  const handleChange = (e, key) => {
+    for (let index = 0; index < convertImg.length; index++) {
+      const element = convertImg[index];
+      if (element.key === key) {
+        element.imageFormat = e.target.value;
+      }
+    }
+  };
+
   return (
-    // <div className="container">
     <div className="imageFormatChange_Container">
       <h1 className="tool_h1">Image Format Changer</h1>
       <div className="imageFormatChange_Box">
@@ -68,7 +83,10 @@ const ImageFormatChanger = () => {
               <span className="ifc-fileName">{item.name}</span>
               <label htmlFor="ifc-fileType" id="ifc-l_fileType">
                 Convert To
-                <select id="ifc-fileType" ref={fileType[item.key]}>
+                <select
+                  id="ifc-fileType"
+                  onChange={(e) => handleChange(e, item.key)}
+                >
                   <option defaultValue="..." hidden>
                     ...
                   </option>
@@ -78,7 +96,7 @@ const ImageFormatChanger = () => {
                 </select>
               </label>
               <button id="ifc-convert" onClick={() => convert(item.key)}>
-                Convert
+                {convertTitle}
               </button>
               <span
                 title="Delete"
@@ -92,12 +110,7 @@ const ImageFormatChanger = () => {
         })}
         <div className="ifc-showConvertImg" ref={previewImgBox}>
           <div className="ifc-convertedImgBox">
-            <img
-              id="ifc-previewconvertedImg"
-              ref={previewImg}
-              src={imgSrc}
-              alt=""
-            />
+            <img id="ifc-previewconvertedImg" src={imgSrc} alt="" />
           </div>
           <div className="ifc-buttons">
             <button
@@ -106,7 +119,7 @@ const ImageFormatChanger = () => {
             >
               Close
             </button>
-            <a href={downloadSrc} download id="ifc-download">
+            <a href={downloadSrc} download={downloadName} id="ifc-download">
               Download
             </a>
           </div>
@@ -129,7 +142,6 @@ const ImageFormatChanger = () => {
         />
       </div>
     </div>
-    // </div>
   );
 };
 
