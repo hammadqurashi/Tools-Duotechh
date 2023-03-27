@@ -1,0 +1,48 @@
+.alert {
+  width: 250px;
+  height: 80px;
+  background-color: rgba(27, 27, 27, 0.774);
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 4px;
+  z-index: 999;
+}
+.top {
+  height: 30%;
+  width: 100%;
+  padding: 4px 5px;
+  text-align: end;
+}
+
+.alert-cross {
+  color: rgb(189, 189, 189);
+  cursor: pointer;
+}
+
+.bottom {
+  height: 70%;
+  width: 90%;
+  padding: 8px 0px;
+  margin: auto;
+}
+
+.alert-report-box {
+  margin-right: 5px;
+}
+
+.fa-circle-check {
+  color: #1fea10;
+  font-size: 20px;
+}
+
+.fa-circle-xmark {
+  color: red;
+  font-size: 20px;
+}
+
+.alert-message {
+  color: white;
+  font-family: var(--alert-font-family);
+  font-size: 16px;
+}

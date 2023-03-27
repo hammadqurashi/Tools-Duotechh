@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Alert from "../../../Components/Alert/Alert";
 import "./index.css";
 
 const ImageFormatChanger = () => {
@@ -11,6 +12,7 @@ const ImageFormatChanger = () => {
   const [downloadSrc, setdownloadSrc] = useState("");
   const [downloadName, setdownloadName] = useState("");
   const [convertTitle, setconvertTitle] = useState("Convert");
+  const [alert, setAlert] = useState(false);
 
   const addFile = async () => {
     let [file] = await uploadRef.current.files;
@@ -26,7 +28,10 @@ const ImageFormatChanger = () => {
         };
         setConvertImg(convertImg.concat(convertImgBox));
       } else {
-        alert("Only JPEG Files are allowed");
+        setAlert(true);
+        setTimeout(() => {
+          setAlert(false);
+        }, 3000);
       }
     }
   };
@@ -65,63 +70,66 @@ const ImageFormatChanger = () => {
   };
 
   return (
-    <div className="otherFormatChangers_Container">
-      <h1 className="tool_h1">JPEG TO PNG CONVERTER</h1>
-      <div className="otherFormatChanger_Box">
-        {convertImg.map((item) => {
-          return (
-            <div className="ofc-convertImg" key={item.key}>
-              <span className="ofc-fileName">{item.name}</span>
-              <label htmlFor="ofc-fileType" id="ofc-l_fileType">
-                Convert To <strong>PNG</strong>
-              </label>
-              <button id="ofc-convert" onClick={() => convert(item.key)}>
-                {convertTitle}
-              </button>
-              <span
-                title="Delete"
-                className="ofc-delete"
-                onClick={() => deleteBox(item.key)}
-              >
-                X
-              </span>
+    <>
+      {alert && <Alert report="fail" message="Only JPEG Files are allowed" />}
+      <div className="otherFormatChangers_Container">
+        <h1 className="tool_h1">JPEG TO PNG CONVERTER</h1>
+        <div className="otherFormatChanger_Box">
+          {convertImg.map((item) => {
+            return (
+              <div className="ofc-convertImg" key={item.key}>
+                <span className="ofc-fileName">{item.name}</span>
+                <label htmlFor="ofc-fileType" id="ofc-l_fileType">
+                  Convert To <strong>PNG</strong>
+                </label>
+                <button id="ofc-convert" onClick={() => convert(item.key)}>
+                  {convertTitle}
+                </button>
+                <span
+                  title="Delete"
+                  className="ofc-delete"
+                  onClick={() => deleteBox(item.key)}
+                >
+                  X
+                </span>
+              </div>
+            );
+          })}
+          <div className="ofc-showConvertImg" ref={previewImgBox}>
+            <div className="ofc-convertedImgBox">
+              <img id="ofc-previewconvertedImg" src={imgSrc} alt="" />
             </div>
-          );
-        })}
-        <div className="ofc-showConvertImg" ref={previewImgBox}>
-          <div className="ofc-convertedImgBox">
-            <img id="ofc-previewconvertedImg" src={imgSrc} alt="" />
+            <div className="ofc-buttons">
+              <button
+                id="ofc-close"
+                onClick={() => (previewImgBox.current.style.display = "none")}
+              >
+                Close
+              </button>
+              <a href={downloadSrc} download={downloadName} id="ofc-download">
+                Download
+              </a>
+            </div>
           </div>
-          <div className="ofc-buttons">
-            <button
-              id="ofc-close"
-              onClick={() => (previewImgBox.current.style.display = "none")}
-            >
-              Close
-            </button>
-            <a href={downloadSrc} download={downloadName} id="ofc-download">
-              Download
-            </a>
-          </div>
-        </div>
-        <button id="ofc-addFiles" onClick={() => uploadRef.current.click()}>
-          <img
-            style={{ display: convertImg.length > 0 ? "none" : "block" }}
-            id="ofc-addFiles_img"
-            src={require("../../../Assets/OtherImages/jpeg.webp")}
-            alt="Upload"
+          <button id="ofc-addFiles" onClick={() => uploadRef.current.click()}>
+            <img
+              style={{ display: convertImg.length > 0 ? "none" : "block" }}
+              id="ofc-addFiles_img"
+              src={require("../../../Assets/OtherImages/jpeg.webp")}
+              alt="Upload"
+            />
+            <span>+ ADD JPEG IMAGE</span>
+          </button>
+          <input
+            type="file"
+            id="ofc-file"
+            ref={uploadRef}
+            onChange={addFile}
+            accept="image/jpeg"
           />
-          <span>+ ADD JPEG IMAGE</span>
-        </button>
-        <input
-          type="file"
-          id="ofc-file"
-          ref={uploadRef}
-          onChange={addFile}
-          accept="image/jpeg"
-        />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
