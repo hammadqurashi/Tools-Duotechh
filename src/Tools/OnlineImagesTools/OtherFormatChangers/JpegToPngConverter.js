@@ -17,14 +17,17 @@ const ImageFormatChanger = () => {
     if (!file) {
       return;
     } else {
-      let src = URL.createObjectURL(file);
-      let convertImgBox = {
-        name: file.name,
-        type: file.type,
-        key: src,
-        imageFormat: "",
-      };
-      setConvertImg(convertImg.concat(convertImgBox));
+      var isValid = /\.jpe?g$/i.test(uploadRef.current.value);
+      if (isValid) {
+        let src = URL.createObjectURL(file);
+        let convertImgBox = {
+          name: file.name,
+          key: src,
+        };
+        setConvertImg(convertImg.concat(convertImgBox));
+      } else {
+        alert("Only JPEG Files are allowed");
+      }
     }
   };
 
@@ -46,10 +49,7 @@ const ImageFormatChanger = () => {
       for (let index = 0; index < convertImg.length; index++) {
         const element = convertImg[index];
         if (element.key === key) {
-          formatChange = await canvas.toDataURL(
-            `image/${element.imageFormat.toLowerCase()}`,
-            0.7
-          );
+          formatChange = await canvas.toDataURL(`image/png`, 0.7);
           setdownloadSrc(formatChange);
           setdownloadName(element.name.split(".")[0]);
         }
@@ -64,15 +64,6 @@ const ImageFormatChanger = () => {
     setConvertImg(newConversions);
   };
 
-  const handleChange = (e, key) => {
-    for (let index = 0; index < convertImg.length; index++) {
-      const element = convertImg[index];
-      if (element.key === key) {
-        element.imageFormat = e.target.value;
-      }
-    }
-  };
-
   return (
     <div className="otherFormatChangers_Container">
       <h1 className="tool_h1">JPEG TO PNG CONVERTER</h1>
@@ -82,18 +73,7 @@ const ImageFormatChanger = () => {
             <div className="ofc-convertImg" key={item.key}>
               <span className="ofc-fileName">{item.name}</span>
               <label htmlFor="ofc-fileType" id="ofc-l_fileType">
-                Convert To
-                <select
-                  id="ofc-fileType"
-                  onChange={(e) => handleChange(e, item.key)}
-                >
-                  <option defaultValue="..." hidden>
-                    ...
-                  </option>
-                  <option value="PNG">PNG</option>
-                  <option value="JPEG">JPG</option>
-                  <option value="WEBP">WEBP</option>
-                </select>
+                Convert To <strong>PNG</strong>
               </label>
               <button id="ofc-convert" onClick={() => convert(item.key)}>
                 {convertTitle}
@@ -128,17 +108,17 @@ const ImageFormatChanger = () => {
           <img
             style={{ display: convertImg.length > 0 ? "none" : "block" }}
             id="ofc-addFiles_img"
-            src={require("../../../Assets/OtherImages/upload.webp")}
+            src={require("../../../Assets/OtherImages/jpeg.webp")}
             alt="Upload"
           />
-          <span>+ ADD IMAGE</span>
+          <span>+ ADD JPEG IMAGE</span>
         </button>
         <input
           type="file"
           id="ofc-file"
           ref={uploadRef}
           onChange={addFile}
-          accept="image/*"
+          accept="image/jpeg"
         />
       </div>
     </div>
